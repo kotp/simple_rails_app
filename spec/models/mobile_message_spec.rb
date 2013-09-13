@@ -20,11 +20,10 @@ describe MobileMessage do
     it { should_not allow_value('htt://github.com/AlexZaytsev/simple_rails_app').for(:url) }
 
     # inclusions
-    it {should ensure_inclusion_of(:platform).in_array(%w(android ios)) }
+    it { should ensure_inclusion_of(:platform).in_array(%w(android ios)) }
     #it {should ensure_inclusion_of(:platform_version).in_array(%w(1 2 3)).lambda {self.platform == "ios"} }
-    it {should ensure_inclusion_of(:app_version).in_array(%w(1.0 1.0.1)) }
-    it {should ensure_inclusion_of(:message_type).in_array(%w(webview alert)) }
-
+    it { should ensure_inclusion_of(:app_version).in_array(%w(1.0 1.0.1)) }
+    it { should ensure_inclusion_of(:message_type).in_array(%w(webview alert)) }
 
 
   end

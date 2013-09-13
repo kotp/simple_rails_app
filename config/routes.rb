@@ -1,7 +1,7 @@
 SimpleRailsApp::Application.routes.draw do
-  resources :mobile_messages
+  resources :mobile_messages, only:%w(new create show)
 
-
+  root to: "mobile_messages#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

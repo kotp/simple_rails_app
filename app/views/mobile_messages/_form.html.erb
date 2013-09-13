@@ -11,6 +11,46 @@
     </div>
   <% end %>
 
+  <p>
+    <b>Platform</b>
+    <%= f.text_field :platform %>
+  </p>
+
+  <p>
+    <b>Platform Version</b>
+    <%= f.text_field :platform_version %>
+  </p>
+
+  <p>
+    <b>App Version</b>
+    <%= f.text_field :app_version %>
+  </p>
+
+  <p>
+    <b>Message Type</b>
+    <%= f.text_field :message_type %>
+  </p>
+
+  <p>
+    <b>Url</b>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <b>Message</b>
+    <%= f.text_field :message %>
+  </p>
+
+  <p>
+    <b>Dismissible</b>
+    <%= f.check_box :dismissible %>
+  </p>
+
+  <p>
+    <b>Active</b>
+    <%= f.check_box :active %>
+  </p>
+
   <div class="actions">
     <%= f.submit %>
   </div>

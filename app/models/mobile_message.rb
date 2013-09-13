@@ -9,4 +9,6 @@ class MobileMessage < ActiveRecord::Base
   validates :message_type, presence: true, inclusion: {in: %w(webview alert)}
   validates_format_of :url, with: URI.regexp(%w(http https))
   validates_presence_of :message
+
+  attr_accessible :platform, :platform_version, :app_version, :message_type, :url, :message, :dismissible, :active
 end
