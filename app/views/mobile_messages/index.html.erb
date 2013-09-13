@@ -1,0 +1,21 @@
+<h1>Listing mobile_messages</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mobile_messages.each do |mobile_message| %>
+  <tr>
+    <td><%= link_to 'Show', mobile_message %></td>
+    <td><%= link_to 'Edit', edit_mobile_message_path(mobile_message) %></td>
+    <td><%= link_to 'Destroy', mobile_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mobile message', new_mobile_message_path %>

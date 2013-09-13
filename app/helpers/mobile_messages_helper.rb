@@ -1,0 +1,2 @@
+module MobileMessagesHelper
+end
