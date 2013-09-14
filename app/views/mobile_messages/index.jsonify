@@ -1,0 +1,6 @@
+json.mobile_messages(@mobile_messages) do |mobile_message|
+  json.message_type mobile_message.message_type
+  json.url mobile_message.url
+  json.message mobile_message.message
+  json.dismissible mobile_message.dismissible
+end

@@ -1,5 +1,5 @@
 SimpleRailsApp::Application.routes.draw do
-  resources :mobile_messages, only:%w(new create show)
+  resources :mobile_messages, only:%w(new create index)
 
   root to: "mobile_messages#new"
   # The priority is based upon order of creation:

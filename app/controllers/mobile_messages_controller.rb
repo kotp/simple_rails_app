@@ -2,23 +2,15 @@ class MobileMessagesController < ApplicationController
 
   # GET /mobile_messages/1
   # GET /mobile_messages/1.json
-  def show
-    @mobile_message = MobileMessage.find(params[:id])
-
-    respond_to do |format|
-      format.json { render json: @mobile_message }
-    end
+  def index
+    @mobile_messages = MobileMessage.all
   end
 
   # GET /mobile_messages/new
   # GET /mobile_messages/new.json
   def new
     @mobile_message = MobileMessage.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @mobile_message }
-    end
+    flash[:notice] = "Mobile message was saved"
   end
 
 
@@ -29,9 +21,10 @@ class MobileMessagesController < ApplicationController
 
     respond_to do |format|
       if @mobile_message.save
-        format.html { redirect_to action: "new", notice: 'Mobile message was successfully created.' }
+        format.html { redirect_to action: "new"}
       else
-        format.html { render action: "new", notice: "Mobile message wasn't saved" }
+        flash[:notice] = "Mobile message wasn't saved"
+        format.html { render action: "new"}
       end
     end
   end
