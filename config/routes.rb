@@ -1,6 +1,8 @@
 SimpleRailsApp::Application.routes.draw do
   resources :mobile_messages, only:%w(new create index)
 
+  match 'api/checkversion', to: "mobile_messages#search"
+
   root to: "mobile_messages#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
