@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Platform</b>
+  <%= @mobile_message.platform %>
+</p>
+
+<p>
+  <b>Platform Version</b>
+  <%= @mobile_message.platform_version %>
+</p>
+
+<p>
+  <b>App Version</b>
+  <%= @mobile_message.app_version %>
+</p>
+
+<p>
+  <b>Message Type</b>
+  <%= @mobile_message.message_type %>
+</p>
+
+<p>
+  <b>Url</b>
+  <%= @mobile_message.url %>
+</p>
+
+<p>
+  <b>Message</b>
+  <%= @mobile_message.message %>
+</p>
+
+<p>
+  <b>Dismissible</b>
+  <%= @mobile_message.dismissible %>
+</p>
+
+<p>
+  <b>Active</b>
+  <%= @mobile_message.active %>
+</p>
+
+<%= link_to 'Edit', edit_mobile_message_path(@mobile_message) %> |
+<%= link_to 'Back', mobile_messages_path %>

@@ -24,7 +24,7 @@ describe MobileMessagesController do
                                       dismissible: true, active: true}
       end
 
-      it { should_not set_the_flash }
+      it { should set_the_flash }
       it { should respond_with(:redirect) }
       it { should response.header['Content-Type'].match(/'html'/) }
     end
@@ -43,16 +43,16 @@ describe MobileMessagesController do
 
   end
 
-  describe 'GET index' do
+  describe 'GET search' do
     context 'respond with json' do
 
       before(:each) do
-        get :index
+        get :search
       end
 
       it { should respond_with(:success) }
       it { should response.header['Content-Type'].match(/json/) }
-      it { should render_template(:index) }
+      it { should render_template(:search) }
     end
 
 
