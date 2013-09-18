@@ -10,5 +10,12 @@ class MobileMessage < ActiveRecord::Base
   validates_format_of :url, with: URI.regexp(%w(http https))
   validates_presence_of :message
 
+  scope :active, where(:active => 't')
+
   attr_accessible :platform, :platform_version, :app_version, :message_type, :url, :message, :dismissible, :active
+
+  def self.for_client(params)
+    self.where(:platform => params[:platform], :platform_version => params[:platform_version], :app_version => params[:app_version]).active
+  end
+
 end

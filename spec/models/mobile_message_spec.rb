@@ -28,4 +28,42 @@ describe MobileMessage do
 
   end
 
+  describe 'for_client' do
+    before(:all) do
+      @message = FactoryGirl.create(:mobile_message)
+    end
+
+    #params = {:platform => 'ios', :platform_version => 1.0, :app_version => 1}
+    message = MobileMessage.for_client({:platform => 'ios', :platform_version => '1', :app_version => '1.0'}).last
+
+    it 'check platform' do
+      message.platform.should == 'ios'
+    end
+
+    it 'check platform_version' do
+      message.platform_version.should == '1'
+    end
+
+    it 'check app_version' do
+      message.app_version.should == '1.0'
+    end
+
+    it 'check message_type' do
+      message.message_type.should == 'alert'
+    end
+
+    it 'check url' do
+      message.url.should == 'http://test.com/'
+    end
+
+    it 'check dismissible' do
+      message.dismissible.should == false
+    end
+
+    it 'check active' do
+      message.active.should == true
+    end
+
+  end
+
 end
