@@ -29,11 +29,10 @@ describe MobileMessage do
   end
 
   describe 'for_client' do
-    before(:all) do
-      @message = FactoryGirl.create(:mobile_message)
+    before(:each) do
+      FactoryGirl.create(:mobile_message).save
     end
 
-    #params = {:platform => 'ios', :platform_version => 1.0, :app_version => 1}
     message = MobileMessage.for_client({:platform => 'ios', :platform_version => '1', :app_version => '1.0'}).last
 
     it 'check platform' do
