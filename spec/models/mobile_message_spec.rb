@@ -28,11 +28,7 @@ describe MobileMessage do
   end
 
   describe 'for_client' do
-    before(:all) do
-      FactoryGirl.create(:mobile_message).save!
-    end
-
-    mobile_message = FactoryGirl.build(:mobile_message)
+    mobile_message = FactoryGirl.create(:mobile_message)
     message = MobileMessage.for_client({:platform => mobile_message.platform,
                                         :platform_version => mobile_message.platform_version,
                                         :app_version => mobile_message.app_version}).last
@@ -64,6 +60,8 @@ describe MobileMessage do
     it 'check active' do
       message.active.should == mobile_message.active
     end
+
+    message.destroy
 
   end
 
