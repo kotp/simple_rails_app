@@ -19,7 +19,7 @@ describe MobileMessagesController do
     context 'should create message' do
 
       before(:each) do
-        post :create, mobile_message:{platform: 'ios', platform_version: 1, app_version: 1.0, message_type: 'alert',
+        post :create, mobile_message:{platform: 'ios', platform_version: '1.0', app_version: '1.0.0', message_type: 'alert',
                                       url: 'http://github.com/AlexZaytsev/simple_rails_app', message: 'hello world',
                                       dismissible: true, active: true}
       end
@@ -32,7 +32,7 @@ describe MobileMessagesController do
     context 'should not create message' do
 
       before(:each) do
-        post :create, platform: 'ios', mobile_message:{platform_version: 1, app_version: 1.0, message_type: 'alert'}
+        post :create, platform: 'ios', mobile_message:{platform_version: '1.0', app_version: '1.0.0', message_type: 'alert'}
       end
 
       it { should set_the_flash }
